@@ -1,0 +1,150 @@
+
+<!-- HTML COMPLETO DA PÁGINA DE VENDAS AVANÇADA COM ANIMAÇÕES -->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Página de Vendas - Livre da Rinite e Sinusite</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap');
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: #f8f4fb;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 800px;
+      margin: auto;
+      padding: 30px;
+      background: #fff;
+      border-radius: 20px;
+      box-shadow: 0 0 25px rgba(142, 68, 173, 0.12);
+      animation: fadeIn 1s ease-in-out;
+    }
+    h1, h2, h3 {
+      color: #8e44ad;
+      text-align: center;
+    }
+    h1 {
+      font-size: 34px;
+      font-weight: 800;
+    }
+    h2 {
+      font-size: 26px;
+      margin-top: 40px;
+    }
+    p, li {
+      font-size: 18px;
+      line-height: 1.6;
+    }
+    .btn {
+      display: inline-block;
+      background-color: #8e44ad;
+      color: white;
+      padding: 15px 30px;
+      font-size: 20px;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 12px;
+      transition: transform 0.3s ease;
+      animation: pulse 2s infinite;
+    }
+    .btn:hover {
+      transform: scale(1.05);
+    }
+    .bonus, .testimonials, .video, .countdown, .urgency {
+      background-color: #f3e6f9;
+      padding: 20px;
+      border-left: 5px solid #8e44ad;
+      margin: 20px 0;
+      border-radius: 10px;
+      animation: slideIn 1s ease;
+    }
+    .countdown p {
+      font-size: 22px;
+      text-align: center;
+      font-weight: bold;
+      color: #8e44ad;
+    }
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+    @keyframes pulse {
+      0% {transform: scale(1);}
+      50% {transform: scale(1.03);}
+      100% {transform: scale(1);}
+    }
+    @keyframes slideIn {
+      from {opacity: 0; transform: translateX(-20px);}
+      to {opacity: 1; transform: translateX(0);}
+    }
+    @media screen and (max-width: 600px) {
+      .container { padding: 20px; }
+      h1 { font-size: 28px; }
+      .btn { font-size: 18px; padding: 12px 25px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Recupere Sua Respiração, Sua Energia e Sua Liberdade</h1>
+    <p style="text-align:center;">Descubra o caminho natural e seguro para eliminar a rinite e sinusite da sua vida — sem depender de remédios ou tratamentos caros</p>
+    <div class="urgency">
+      <p><strong>Oferta Especial:</strong> De <s>R$ 97,00</s> por apenas <strong style="color:#c0392b;">R$ 49,90</strong> — por tempo limitado</p>
+    </div>
+    <div class="countdown">
+      <p>Oferta expira em: <span id="countdown"></span></p>
+    </div>
+    <script>
+      const deadline = new Date(new Date().getTime() + 30 * 60000);
+      const timer = document.getElementById("countdown");
+      const interval = setInterval(() => {
+        const now = new Date().getTime();
+        const t = deadline - now;
+        if (t <= 0) {
+          clearInterval(interval);
+          timer.innerHTML = "Tempo encerrado!";
+        } else {
+          const m = Math.floor((t % (1000 * 60 * 60)) / (1000 * 60));
+          const s = Math.floor((t % (1000 * 60)) / 1000);
+          timer.innerHTML = `${m}m ${s}s`;
+        }
+      }, 1000);
+    </script>
+    <p><strong style="color:#8e44ad;">Imagine acordar com o nariz livre, sem dor no rosto, sem espirros, sem fadiga...</strong> Apenas paz, respiração profunda e dias com mais energia. Este guia traz o protocolo natural que mudou minha vida — e está mudando a vida de milhares.</p>
+    <p>Mas atenção: <strong>não se trata de chás, sprays ou promessas genéricas.</strong> É um método simples, poderoso e pouco conhecido, que atua na verdadeira raiz da inflamação — e devolve sua liberdade respiratória.</p>
+    <h2>Você vai conquistar:</h2>
+    <ul>
+      <li>Respiração limpa e profunda já nos primeiros dias</li>
+      <li>Noites de sono restaurador, sem congestão</li>
+      <li>Fim das crises constantes e dos remédios químicos</li>
+      <li>Mais disposição, foco e qualidade de vida</li>
+      <li>Imunidade fortalecida e corpo em equilíbrio</li>
+    </ul>
+    <div class="bonus">
+      <h3>BÔNUS EXCLUSIVO HOJE:</h3>
+      <p><strong>Guia de Alimentação Anti-Inflamatória + Checklist Respiratório</strong><br>Descubra os alimentos que desinflamam naturalmente e como manter sua saúde respiratória com apenas 3 minutos por dia.</p>
+      <p style="color:#c0392b;"><strong>Disponível apenas enquanto esta página estiver ativa.</strong></p>
+    </div>
+    <h2>Veja o que nossos leitores dizem:</h2>
+    <div class="testimonials">
+      <p><em>"Depois de anos de sofrimento, esse guia me libertou. Em poucos dias, meu nariz desentupiu e nunca mais precisei de remédios!"</em><br><strong>- Renata F., Brasília</strong></p>
+      <p><em>"Sofria desde a infância com sinusite. Hoje respiro como nunca. Esse método mudou minha vida!"</em><br><strong>- João L., Florianópolis</strong></p>
+    </div>
+    <div class="video">
+      <h3 style="text-align: center;">Assista ao vídeo e descubra como essa transformação é possível:</h3>
+      <div style="text-align: center;">
+        <iframe width="100%" height="315" src="https://www.youtube.com/embed/SEU_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </div>
+    <div style="text-align: center; margin-top: 40px;">
+      <a class="btn" href="#checkout">Quero Respirar Livre por R$ 49,90</a>
+      <p style="font-size: 14px; color: #999; margin-top: 10px;">Pagamento 100% seguro | Acesso imediato ao e-book | Garantia de 7 dias</p>
+    </div>
+  </div>
+</body>
+</html>
